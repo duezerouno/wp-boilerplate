@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>{{ function('wp-title') }}</title>
+  <link rel="stylesheet" href="{{site.theme.link}}/style.css">
+</head>
+<body>
+
+  <div>
+		{% block content %}
+	    {% if posts %}
+				<h1>My blog</h1>
+	      <ul>
+	        {% for post in posts %}
+	          <li>
+	            <a href="{{post.link}}">{{post.title}}</a>
+	          </li>
+	        {% endfor %}
+	      </ul>
+			{% else %}
+	      <p>No posts!</p>
+	    {% endif %}
+		{% endblock %}
+  </div>
+
+	<script src="{{site.theme.link}}/js/vendor.bundle.js" defer></script>
+  <script src="{{site.theme.link}}/js/app.bundle.js" defer></script>
+</body>
+</html>
