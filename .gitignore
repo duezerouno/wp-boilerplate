@@ -32,6 +32,3 @@ sitemap.xml.gz
 .sass-cache
 node_modules
 build
-dist
-_normalize.scss
-src/js/env.js

@@ -1,0 +1,7 @@
+// Functions
+
+
+// Selector to access $font map efficiently
+@function font($key: primary) {
+  @return map-get($font, $key);
+}
