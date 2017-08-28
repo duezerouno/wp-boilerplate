@@ -1,6 +1,6 @@
 # WP Boilerplate
 
-## Getting Started
+### Getting Started
 
 With a local instance of WordPress and Timber installed, it's easy to get started.
 
