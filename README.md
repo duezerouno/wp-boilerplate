@@ -1,5 +1,4 @@
 # WP Boilerplate
----
 
 ## Getting Started
 
