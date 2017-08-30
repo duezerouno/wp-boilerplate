@@ -30,4 +30,35 @@ body {
   font-family: font(primary);
   background-color: $white;
   color: $black;
+  padding: 1rem;
+}
+
+
+ul {
+  @include reset-list();
+}
+
+
+a {
+  @include reset-anchor();
+  display: inline-block;
+  opacity: 0.5;
+
+  &::after {
+    content: '';
+    display: block;
+    background-color: $black;
+    height: 0.075rem;
+    margin-top: 2px;
+  }
+
+  @include hover-both() {
+    opacity: 1;
+  }
+}
+
+
+p {
+  opacity: 0.7;
+  line-height: 1.6;
 }
