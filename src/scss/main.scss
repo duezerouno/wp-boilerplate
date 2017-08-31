@@ -20,3 +20,11 @@ Version: 1.0.0
 @import 'generic/normalize';
 @import 'generic/fonts';
 @import 'generic/base';
+
+
+// Objects
+@import 'objects/keyframes';
+
+// Components
+@import 'components/preloader';
+@import 'components/app';
