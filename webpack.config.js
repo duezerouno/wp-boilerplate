@@ -14,6 +14,7 @@ module.exports = {
     app: './src/js/index.js',
     vendor: Object.keys(packages.dependencies)
   },
+  devtool: 'inline-source-map',
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'js/[name].bundle.js'
@@ -48,7 +49,7 @@ module.exports = {
                 ]
               }
             }, {
-              loader: 'sass-loader' // compiles Sass to CSS
+              loader: 'sass-loader'
             }
           ]
         })
