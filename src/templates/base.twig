@@ -3,28 +3,38 @@
 <head>
 	{% include 'html-head.twig' %}
 </head>
-<body class="is-touch">
+<body class="is-mouse">
 
 	<noscript>
 		{% include 'no-javascript.twig' %}
 	</noscript>
 
-  <div>
+	<div id="preloader">
+		<p>Preloader</p>
+	</div>
+
+	<nav>
+		<a href="{{site.url}}">Home</a>
+	</nav>
+
+	<div id="app">
 		{% block content %}
-	    {% if posts %}
-				<h1>{{site.title}}</h1>
-	      <ul>
-	        {% for post in posts %}
-	          <li>
-	            <a href="{{post.link}}">{{post.title}}</a>
-	          </li>
-	        {% endfor %}
-	      </ul>
-			{% else %}
-	      <p>No posts.</p>
-	    {% endif %}
+			<div class="view" data-namespace="home">
+		    {% if posts %}
+					<h1>{{site.title}}</h1>
+		      <ul>
+		        {% for post in posts %}
+		          <li>
+		            <a href="{{post.link|relative}}">{{post.title}}</a>
+		          </li>
+		        {% endfor %}
+		      </ul>
+				{% else %}
+		      <p>No posts.</p>
+		    {% endif %}
+			</div>
 		{% endblock %}
-  </div>
+	</div>
 
 	<script>
 		window.APP = window.APP || {};
