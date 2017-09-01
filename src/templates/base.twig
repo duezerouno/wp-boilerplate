@@ -6,7 +6,7 @@
 <body class="is-loading">
 
 	<noscript>
-		{% include 'no-javascript.twig' %}
+		{% include 'noscript.twig' %}
 	</noscript>
 
 	<div id="preloader">
@@ -37,10 +37,11 @@
 	</div>
 
 	<script>
-		window.APP = window.APP || {};
-		APP.BASE_URL = '{{site.url}}';
-		APP.THEME_URL = '{{site.theme.uri}}';
-		APP.AJAX_URL = '{{fn('admin_url', 'admin-ajax.php')}}';
+		window.APP = window.APP || {}
+		APP.BASE_URL = '{{site.url}}'
+		APP.BASE_URL_RELATIVE = '{{site.url|relative}}'
+		APP.THEME_URL = '{{site.theme.uri}}'
+		APP.AJAX_URL = '{{fn('admin_url', 'admin-ajax.php')}}'
 	</script>
 	<script src="{{site.theme.link}}/js/vendor.bundle.js" defer></script>
   <script src="{{site.theme.link}}/js/app.bundle.js" defer></script>
