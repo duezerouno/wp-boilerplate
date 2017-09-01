@@ -5,8 +5,6 @@ export default {
   app: document.querySelector('#app'),
   view: document.querySelector('.view'),
 
-  pointer: {
-    isMouse: false,
-    isTouch: false
-  }
+  isMouse: false,
+  isTouch: false
 }

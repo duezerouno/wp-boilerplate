@@ -21,6 +21,7 @@ class App {
 
   init () {
     Utils.detectPointer.listen()
+    Utils.detectBrowser.init()
 
     Emitter.on(APP_READY, this.ready)
 

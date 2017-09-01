@@ -13,7 +13,9 @@
     "domready": "^1.0.8",
     "fastclick": "^1.0.6",
     "gsap": "^1.20.2",
-    "lodash.debounce": "^4.0.8"
+    "lodash.assign": "^4.2.0",
+    "lodash.debounce": "^4.0.8",
+    "sniffer": "watsondg/sniffer"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

@@ -15,14 +15,14 @@ class DetectPointer {
   handleMouseMove = () => {
     this.unlisten()
 
-    config.pointer.isMouse = true
+    config.isMouse = true
     config.body.classList.add('is-mouse')
   }
 
   handleTouchStart = () => {
     this.unlisten()
 
-    config.pointer.isTouch = true
+    config.isTouch = true
     config.body.classList.add('is-touch')
 
     FastClick.attach(config.body)
