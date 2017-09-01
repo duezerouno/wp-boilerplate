@@ -5,8 +5,8 @@
   "main": "gulpfile.js",
   "scripts": {
     "lint": "standard --verbose | snazzy",
-    "build": "webpack",
-    "start": "webpack --watch"
+    "build": "webpack --config webpack.prod.js",
+    "start": "webpack --watch --config webpack.dev.js"
   },
   "dependencies": {
     "barba.js": "^1.0.0",
@@ -29,7 +29,8 @@
     "node-sass": "^4.5.3",
     "postcss-loader": "^2.0.6",
     "sass-loader": "^6.0.6",
-    "webpack": "^3.5.5"
+    "webpack": "^3.5.5",
+    "webpack-merge": "^4.1.0"
   },
   "author": "Mike Wagenheim <mike@wagz.io> (http://wagz.io)",
   "license": "ISC"

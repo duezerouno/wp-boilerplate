@@ -765,10 +765,6 @@ bluebird@^2.10.2:
   version "2.11.0"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-2.11.0.tgz#534b9033c022c9579c56ba3b3e5a5caafbb650e1"
 
-bluebird@^3.3.4:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.0.tgz#791420d7f551eea2897453a8a77653f96606d67c"
-
 bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.1.1, bn.js@^4.4.0:
   version "4.11.8"
   resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.11.8.tgz#2cde09eb5ee341f484746bb0309b3253b1b1442f"
@@ -2002,18 +1998,6 @@ globule@^1.0.0:
 graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.1.9:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
-
-gsap-promise@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/gsap-promise/-/gsap-promise-2.0.0.tgz#7220c1b13965b129cb263fcfe317a20239c9973d"
-  dependencies:
-    bluebird "^3.3.4"
-    gsap "1.18.2"
-    object-assign "^4.0.1"
-
-gsap@1.18.2:
-  version "1.18.2"
-  resolved "https://registry.yarnpkg.com/gsap/-/gsap-1.18.2.tgz#e3fb103de837103ab64e4d67302986ca071edecc"
 
 gsap@^1.20.2:
   version "1.20.2"
@@ -4375,6 +4359,12 @@ watchpack@^1.4.0:
     async "^2.1.2"
     chokidar "^1.7.0"
     graceful-fs "^4.1.2"
+
+webpack-merge@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/webpack-merge/-/webpack-merge-4.1.0.tgz#6ad72223b3e0b837e531e4597c199f909361511e"
+  dependencies:
+    lodash "^4.17.4"
 
 webpack-sources@^1.0.1:
   version "1.0.1"
