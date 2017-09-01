@@ -35,9 +35,7 @@ class Router {
   }
 
   getTransition () {
-    Barba.Pjax.getTransition = () => {
-      return TransitionReducer
-    }
+    Barba.Pjax.getTransition = () => TransitionReducer
   }
 
   handleStateChange = () => {
