@@ -11,6 +11,7 @@
   "dependencies": {
     "barba.js": "^1.0.0",
     "domready": "^1.0.8",
+    "fastclick": "^1.0.6",
     "gsap": "^1.20.2",
     "lodash.debounce": "^4.0.8"
   },

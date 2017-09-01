@@ -1,4 +1,5 @@
 import config from '../config'
+import FastClick from 'fastclick'
 
 class DetectPointer {
   listen () {
@@ -23,6 +24,8 @@ class DetectPointer {
 
     config.pointer.isTouch = true
     config.body.classList.add('is-touch')
+
+    FastClick.attach(config.body)
   }
 }
 
