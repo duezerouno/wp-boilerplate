@@ -5,6 +5,10 @@ const { UglifyJsPlugin } = require('webpack').optimize
 
 module.exports = merge(common, {
   plugins: [
-    new UglifyJsPlugin()
+    new UglifyJsPlugin({
+      output: {
+        comments: false
+      }
+    })
   ]
 })
