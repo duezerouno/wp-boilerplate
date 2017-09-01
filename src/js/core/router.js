@@ -1,8 +1,14 @@
 import Barba from 'barba.js'
 import Views from '../views'
 import Transition from '../transitions'
-
+import Emitter from './emitter'
 import Utils from '../util'
+import config from '../config'
+import {
+  INIT_STATE_CHANGE,
+  NEW_PAGE_READY,
+  TRANSITION_COMPLETED
+} from '../config/constants'
 
 class Router {
   static get state () {
@@ -23,7 +29,6 @@ class Router {
     this.addEventListeners()
 
     Views.map(view => view.init())
-
     Barba.Prefetch.init()
     Barba.Pjax.start()
 
@@ -31,8 +36,9 @@ class Router {
   }
 
   addEventListeners () {
-    Barba.Dispatcher.on('initStateChange', this.handleStateChange)
-    Barba.Dispatcher.on('transitionCompleted', this.handleTransitionCompleted)
+    Emitter.on(INIT_STATE_CHANGE, this.handleStateChange)
+    Emitter.on(NEW_PAGE_READY, this.handleNewPageReady)
+    Emitter.on(TRANSITION_COMPLETED, this.handleTransitionCompleted)
   }
 
   getTransition () {
@@ -43,6 +49,11 @@ class Router {
 
   handleStateChange = () => {
     this.utils.lock()
+  }
+
+  handleNewPageReady = () => {
+    config.body.classList.add(`is-${Router.state.current.namespace}`)
+    config.body.classList.remove(`is-${Router.state.previous.namespace}`)
   }
 
   handleTransitionCompleted = () => {

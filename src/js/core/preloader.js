@@ -22,6 +22,8 @@ class Preloader {
   done = () => {
     this.el.parentNode.removeChild(this.el)
 
+    config.body.classList.remove('is-loading')
+
     Emitter.emit(APP_READY)
   }
 }
