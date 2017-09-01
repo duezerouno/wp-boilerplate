@@ -1,5 +1,7 @@
 import config from './config'
+
 import debounce from 'lodash.debounce'
+import Utils from './util'
 
 import Router from './core/router'
 import Preloader from './core/preloader'
@@ -21,6 +23,8 @@ class App {
   }
 
   init () {
+    Utils.detectPointer.listen()
+
     Emitter.on(APP_READY, this.ready)
 
     Preloader.init()
