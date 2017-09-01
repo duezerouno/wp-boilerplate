@@ -1,6 +1,7 @@
 import config from '../config'
 import Emitter from './emitter'
 import { APP_READY } from '../config/constants'
+import Utils from './util'
 
 class Preloader {
   constructor () {
@@ -8,6 +9,9 @@ class Preloader {
   }
 
   init () {
+    Utils.detectPointer.listen()
+    Utils.detectBrowser.init()
+
     this.animateIn()
   }
 

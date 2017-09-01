@@ -1,8 +1,7 @@
 import config from './config'
-import Utils from './util'
 import debounce from 'lodash.debounce'
-import Router from './core/router'
 import Preloader from './core/preloader'
+import Router from './core/router'
 import Emitter from './core/emitter'
 import Transition from './transitions'
 import {
@@ -20,9 +19,6 @@ class App {
   }
 
   init () {
-    Utils.detectPointer.listen()
-    Utils.detectBrowser.init()
-
     Emitter.on(APP_READY, this.ready)
 
     Preloader.init()
