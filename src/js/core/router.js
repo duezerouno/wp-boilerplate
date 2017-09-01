@@ -1,9 +1,9 @@
 import Barba from 'barba.js'
 import Views from '../views'
-import Transition from '../transitions'
 import Emitter from './emitter'
 import Utils from '../util'
 import config from '../config'
+import TransitionReducer from '../transitions/reducer'
 import {
   INIT_STATE_CHANGE,
   NEW_PAGE_READY,
@@ -11,13 +11,6 @@ import {
 } from '../config/constants'
 
 class Router {
-  static get state () {
-    return {
-      previous: Barba.Pjax.History.prevStatus() || false,
-      current: Barba.Pjax.History.currentStatus()
-    }
-  }
-
   constructor () {
     Barba.Pjax.Dom.wrapperId = 'app'
     Barba.Pjax.Dom.containerClass = 'view'
@@ -43,7 +36,7 @@ class Router {
 
   getTransition () {
     Barba.Pjax.getTransition = () => {
-      return Transition.default
+      return TransitionReducer
     }
   }
 
@@ -52,8 +45,11 @@ class Router {
   }
 
   handleNewPageReady = () => {
-    config.body.classList.add(`is-${Router.state.current.namespace}`)
-    config.body.classList.remove(`is-${Router.state.previous.namespace}`)
+    config.body.classList.add(`is-${Barba.Pjax.History.currentStatus().namespace}`)
+
+    if (Barba.Pjax.History.prevStatus()) {
+        config.body.classList.remove(`is-${Barba.Pjax.History.prevStatus().namespace}`)
+    }
   }
 
   handleTransitionCompleted = () => {

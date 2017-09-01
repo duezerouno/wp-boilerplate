@@ -1,23 +1,20 @@
 import config from './config'
-
-import debounce from 'lodash.debounce'
 import Utils from './util'
-
+import debounce from 'lodash.debounce'
 import Router from './core/router'
 import Preloader from './core/preloader'
 import Emitter from './core/emitter'
-
 import Transition from './transitions'
-
 import {
   WINDOW_RESIZE,
   APP_READY
 } from './config/constants'
 
-
 class App {
   constructor () {
     this.el = config.app
+
+    TweenLite.defaultEase = Expo.easeOut
 
     this.init()
   }

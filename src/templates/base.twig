@@ -14,7 +14,7 @@
 	</div>
 
 	<nav>
-		<a href="{{site.url}}">Home</a>
+		<a href="{{site.url}}" data-namespace="home">Home</a>
 	</nav>
 
 	<div id="app">
@@ -25,7 +25,7 @@
 		      <ul>
 		        {% for post in posts %}
 		          <li>
-		            <a href="{{post.link|relative}}">{{post.title}}</a>
+		            <a href="{{post.link|relative}}" data-namespace="single">{{post.title}}</a>
 		          </li>
 		        {% endfor %}
 		      </ul>
