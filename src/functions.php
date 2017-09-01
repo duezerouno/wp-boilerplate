@@ -40,9 +40,6 @@ class WPBoilerplateSite extends TimberSite {
 		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
 
 		add_action( 'init', array( $this, 'add_custom_options_page' ) );
-		add_action( 'init', array( $this, 'register_post_types' ) );
-		add_action( 'init', array( $this, 'register_taxonomies' ) );
-
 		add_action( 'wp_footer', array( $this, 'deregister_scripts' ) );
 
 		parent::__construct();
@@ -61,14 +58,6 @@ class WPBoilerplateSite extends TimberSite {
 		}
 	}
 
-  function register_post_types() {
-		//this is where you can register custom post types
-	}
-
-	function register_taxonomies() {
-		//this is where you can register custom taxonomies
-	}
-
 	function add_to_context( $context ) {
 		$context['menu'] = new TimberMenu();
 		$context['site'] = $this;
@@ -77,10 +66,13 @@ class WPBoilerplateSite extends TimberSite {
 	}
 
 	function add_to_twig( $twig ) {
-		/* this is where you can add your own functions to twig */
 		$twig->addExtension( new Twig_Extension_StringLoader() );
 		$twig->addFilter('myfoo', new Twig_SimpleFilter('myfoo', array($this, 'myfoo')));
 		return $twig;
+	}
+
+	function deregister_scripts() {
+ 		wp_deregister_script( 'wp-embed' );
 	}
 }
 new WPBoilerplateSite();
