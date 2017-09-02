@@ -12,7 +12,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'js/app.bundle.js'
+    filename: 'js/[name].bundle.js'
   },
   module: {
     rules: [
@@ -54,7 +54,7 @@ module.exports = {
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      filename: 'vendor.bundle.js'
+      filename: 'js/vendor.bundle.js'
     }),
     new ExtractTextPlugin({
       filename: 'style.css'
