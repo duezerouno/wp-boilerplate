@@ -1,12 +1,9 @@
+const webpack = require('webpack')
 const path = require('path')
 const packages = require('./package.json')
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-
-const extractSass = new ExtractTextPlugin({
-  filename: 'style.css'
-})
 
 module.exports = {
   entry: {
@@ -15,7 +12,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'js/[name].bundle.js'
+    filename: 'js/app.bundle.js'
   },
   module: {
     rules: [
@@ -34,7 +31,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: extractSass.extract({
+        use: ExtractTextPlugin.extract({
           use: [
             {
               loader: 'css-loader'
@@ -55,7 +52,13 @@ module.exports = {
     ]
   },
   plugins: [
-    extractSass,
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'vendor.bundle.js'
+    }),
+    new ExtractTextPlugin({
+      filename: 'style.css'
+    }),
     new CopyWebpackPlugin(
       [
         {
