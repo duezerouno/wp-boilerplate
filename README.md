@@ -17,7 +17,6 @@ A custom WordPress theme development boilerplate using SCSS, Timber, Barba.js, B
   - ACF
 - Create a symlink to the built theme folder
 ```sh
-# Example)
 # With a local WP install in
 # `~/Documents/Sites/wordpress`
 # and this repo on your desktop:
