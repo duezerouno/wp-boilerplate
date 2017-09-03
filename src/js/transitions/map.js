@@ -2,10 +2,10 @@ import Transition from './'
 
 export default {
   home: {
-    single: Transition.fade
+    single: Transition.slideUp
   },
   single: {
-    home: Transition.slideUp
+    home: Transition.fade
   },
 
   // Default transition
