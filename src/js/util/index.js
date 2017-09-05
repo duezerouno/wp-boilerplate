@@ -1,12 +1,11 @@
-import ScrollUtils from './scroll'
-import RouterUtils from './router'
-
+import scroll from './scroll'
+import router from './router'
 import detectPointer from './detect-pointer'
 import detectBrowser from './detect-browser'
 
 export default {
-  scroll: ScrollUtils,
-  router: RouterUtils,
+  scroll,
+  router,
   detectPointer,
   detectBrowser
 }

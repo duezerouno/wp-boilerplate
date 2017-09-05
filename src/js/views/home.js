@@ -1,6 +1,6 @@
 import Barba from 'barba.js'
 
-const Home = Barba.BaseView.extend({
+const home = Barba.BaseView.extend({
 	namespace: 'home',
 
 	onEnter () {},
@@ -12,4 +12,4 @@ const Home = Barba.BaseView.extend({
 	onLeaveCompleted () {}
 })
 
-export default Home
+export default home
