@@ -1,6 +1,6 @@
 import Barba from 'barba.js'
 
-const Single = Barba.BaseView.extend({
+const single = Barba.BaseView.extend({
 	namespace: 'single',
 
 	onEnter () {},
@@ -12,4 +12,4 @@ const Single = Barba.BaseView.extend({
 	onLeaveCompleted () {}
 })
 
-export default Single
+export default single

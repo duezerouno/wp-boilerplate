@@ -1,13 +1,13 @@
 import config from '../config'
 
-class ScrollUtils {
+export default {
   to (x, y) {
     window.scroll(x, y)
-  }
+  },
 
   reset () {
     this.to(0, 0)
-  }
+  },
 
   current () {
     if (window.pageYOffset) return window.pageYOffset
@@ -16,5 +16,3 @@ class ScrollUtils {
       : document.body.scrollTop
   }
 }
-
-export default new ScrollUtils()

@@ -1,9 +1,9 @@
 import Barba from 'barba.js'
-import Views from '../views'
-import Emitter from './emitter'
-import Utils from '../util'
+import views from '../views'
+import emitter from './emitter'
+import utils from '../util'
 import config from '../config'
-import TransitionReducer from '../transitions/reducer'
+import transitionReducer from '../transitions/reducer'
 import {
   INIT_STATE_CHANGE,
   NEW_PAGE_READY,
@@ -15,13 +15,13 @@ class Router {
     Barba.Pjax.Dom.wrapperId = 'app'
     Barba.Pjax.Dom.containerClass = 'view'
 
-    this.utils = Utils.router
+    this.utils = utils.router
   }
 
   init () {
     this.addEventListeners()
 
-    Views.map(view => view.init())
+    views.map(view => view.init())
     Barba.Prefetch.init()
     Barba.Pjax.start()
 
@@ -35,7 +35,7 @@ class Router {
   }
 
   getTransition () {
-    Barba.Pjax.getTransition = () => TransitionReducer
+    Barba.Pjax.getTransition = () => transitionReducer
   }
 
   handleStateChange = () => {

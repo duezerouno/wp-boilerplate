@@ -1,32 +1,34 @@
 import config from '../config'
 import FastClick from 'fastclick'
 
-class DetectPointer {
-  listen () {
-    document.addEventListener('mousemove', this.handleMouseMove)
-    document.addEventListener('touchstart', this.handleTouchStart)
+function detectPointer () {
+  const listen = () => {
+    document.addEventListener('mousemove', handleMouseMove)
+    document.addEventListener('touchstart', handleTouchStart)
   }
 
-  unlisten() {
-    document.removeEventListener('mousemove', this.handleMouseMove)
-    document.removeEventListener('touchstart', this.handleTouchStart)
+  const unlisten = () => {
+    document.removeEventListener('mousemove', handleMouseMove)
+    document.removeEventListener('touchstart', handleTouchStart)
   }
 
-  handleMouseMove = () => {
-    this.unlisten()
+  const handleMouseMove = () => {
+    unlisten()
 
     config.isMouse = true
     config.body.classList.add('is-mouse')
   }
 
-  handleTouchStart = () => {
-    this.unlisten()
+  const handleTouchStart = () => {
+    unlisten()
 
     config.isTouch = true
     config.body.classList.add('is-touch')
 
     FastClick.attach(config.body)
   }
+
+  return listen()
 }
 
-export default new DetectPointer()
+export default detectPointer

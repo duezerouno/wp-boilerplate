@@ -1,9 +1,9 @@
 import config from './config'
 import debounce from 'lodash.debounce'
-import Preloader from './core/preloader'
-import Router from './core/router'
-import Emitter from './core/emitter'
-import Transition from './transitions'
+import preloader from './core/preloader'
+import router from './core/router'
+import emitter from './core/emitter'
+import transition from './transitions'
 import {
   WINDOW_RESIZE,
   APP_READY
@@ -19,13 +19,13 @@ class App {
   }
 
   init () {
-    Emitter.on(APP_READY, this.ready)
+    emitter.on(APP_READY, this.ready)
 
-    Preloader.init()
+    preloader.init()
   }
 
   ready = () => {
-    Router.init()
+    router.init()
 
     this.addEventListeners()
     this.animateIn()
@@ -36,11 +36,11 @@ class App {
   }
 
   animateIn () {
-    return Transition.tween.fadeIn(this.el)
+    return transition.tween.fadeIn(this.el)
   }
 
   broadcastResize = () => {
-    Emitter.emit(WINDOW_RESIZE, {
+    emitter.emit(WINDOW_RESIZE, {
       width: window.innerWidth,
       height: window.innerHeight
     })

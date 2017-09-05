@@ -1,13 +1,13 @@
-import Transition from './'
+import transition from './'
 
 export default {
   home: {
-    single: Transition.slideUp
+    single: transition.slideUp
   },
   single: {
-    home: Transition.fade
+    home: transition.fade
   },
 
   // Default transition
-  default: Transition.fade
+  default: transition.fade
 }

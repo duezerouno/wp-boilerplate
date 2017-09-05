@@ -1,9 +1,9 @@
-import Home from './home'
-import Single from './single'
+import home from './home'
+import single from './single'
 
-const Views = [
-  Home,
-  Single
+const views = [
+  home,
+  single
 ]
 
-export default Views
+export default views
