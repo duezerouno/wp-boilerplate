@@ -7,7 +7,7 @@ const ReducerTransition = Barba.BaseTransition.extend({
       const from = Barba.Pjax.History.prevStatus().namespace
       const to = Barba.Pjax.History.currentStatus().namespace
 
-      return (map[from][to] || map.default)(
+      return (map[from] && map[from][to] || map.default)(
         this.oldContainer,
         this.newContainer,
         this.done.bind(this)
