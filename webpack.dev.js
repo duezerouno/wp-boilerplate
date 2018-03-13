@@ -7,7 +7,7 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
   plugins: [
     new BrowserSyncPlugin({
-      proxy: 'wpboilerplate.dev',
+      proxy: 'bmetal.local',
       notify: false,
       open: true
     })
